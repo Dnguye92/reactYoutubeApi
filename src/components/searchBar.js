@@ -12,11 +12,9 @@ class SearchBar extends Component {
 	// this is the syntax we use to define a method in a component
 	render() {
 		return (
-			<div className="container">
-				<input 
-				value={this.state.term}
-				className="form-control" onChange={event => this.setState({ term: event.target.value })} />
-			</div>
+			<input 
+			value={this.state.term}
+			className="form-control" onChange={event => this.setState({ term: event.target.value })} />
 		);
 	}
 

@@ -17,7 +17,7 @@ class App extends Component {
 
 		YTSearch({
 			key: API_KEY,
-			term: 'surfboards'
+			term: 'kittens'
 		}, (videos) => {
 			console.log(videos);
 			this.setState({ videos });
