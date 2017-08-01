@@ -5,17 +5,24 @@ class SearchBar extends Component {
 	// this is how we define state in a Class based Component
 	constructor(props) {
 		super(props);
-
+	
 		this.state= { term: '' };
 	}
 
 	// this is the syntax we use to define a method in a component
 	render() {
 		return (
-			<input 
-			value={this.state.term}
-			className="form-control" onChange={event => this.setState({ term: event.target.value })} />
+			<div className="search-bar">
+				<input 
+				value={this.state.term}
+				onChange={event => this.onInputChange(event.target.value)} />
+			</div>
 		);
+	}
+
+	onInputChange(term) {
+		this.setState({term});
+		this.props.onSearchTermChange(term);
 	}
 
 	// typical naming convention for event handlers
